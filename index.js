@@ -1,7 +1,25 @@
 function fetchBooks() {
-  // To pass the tests, don't forget to return your fetch!
-  
+  return fetch ('https://anapioficeandfire.com/api/books')
+  .then  (resp => resp.json())
+  .then (resp => renderBooks(resp))
 }
+// fetch('http://localhost:3000/pokemon',{
+//   method: 'POST',
+//   headers:{
+//       'Content-Type':'application/json'
+//   },
+//   body: JSON.stringify(pokemon)
+// })
+// .then(res => res.json())
+// .then(pokemon =>{
+//   renderPokemon(pokemon)
+// } )
+// }
+// function getAllPokemon(){
+//   fetch('http://localhost:3000/pokemon')
+//   .then(res => res.json())
+//   .then(pokemon => pokemon.forEach(pok => renderPokemon(pok)))
+// }
 
 function renderBooks(books) {
   const main = document.querySelector('main');
